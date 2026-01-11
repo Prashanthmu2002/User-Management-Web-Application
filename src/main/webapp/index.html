@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h2 {
+            color: #222;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        /* Card-style container */
+        form {
+            background: #ffffff;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            max-width: 420px;
+            width: 100%;
+        }
+
+        /* Label styling */
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #444;
+            font-size: 15px;
+        }
+
+        /* Input styling */
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            font-size: 14px;
+        }
+
+        input[type="text"]:focus {
+            border-color: #ff7f50;
+            box-shadow: 0 0 6px rgba(255, 127, 80, 0.5);
+            outline: none;
+        }
+
+        /* Button styling */
+        button {
+            background: linear-gradient(135deg, #ff7f50, #ff6347);
+            color: #fff;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+            width: 100%;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #e85c3a, #d94f2b);
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        /* Different styling for View Users form */
+        form:nth-of-type(2) button {
+            background: linear-gradient(135deg, #6a5acd, #00bfff);
+        }
+
+        form:nth-of-type(2) button:hover {
+            background: linear-gradient(135deg, #483d8b, #1e90ff);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Add User</h2>
+    <form action="UserServlet" method="post">
+        <label for="username">Enter Name:</label>
+        <input type="text" id="username" name="username" placeholder="Type your name..." required>
+        <button type="submit">Submit (POST)</button>
+    </form>
+
+    <h2>View Users</h2>
+    <form action="UserServlet" method="get">
+        <button type="submit">View All Users (GET)</button>
+    </form>
+
+</body>
+</html>
